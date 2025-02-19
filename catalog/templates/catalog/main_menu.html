@@ -1,0 +1,10 @@
+{% extends 'catalog/base.html' %}
+
+
+{% block products %}
+    <div class="row text-center">
+        {% for prod in products %}
+            {% include 'catalog/includes/inc_card_menu.html' with object=prod %}
+        {% endfor %}
+    </div>
+{% endblock %}

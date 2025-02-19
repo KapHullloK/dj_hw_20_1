@@ -1,0 +1,26 @@
+{% load my_tags %}
+
+
+<div class="col-5">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{ prod.name }}</h4>
+        </div>
+        <div class="card-body">
+            {% if prod.image %}
+                <img src="{{ prod.image.url }}" class="card-img-top"/>
+            {% else %}
+                <p>Изображение отсутствует</p>
+            {% endif %}
+            <h1 class="card-title pricing-card-title">{{ prod.price }} р</h1>
+            <h1 class="card-title pricing-card-title fs-3">{{ prod.category }}</h1>
+            <h1 class="card-title pricing-card-title fs-5">{{ prod.creation_date }}</h1>
+            <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                <li>{{ prod.description }}</li>
+            </ul>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-lg btn-outline-primary">Купить</button>
+            </div>
+        </div>
+    </div>
+</div>

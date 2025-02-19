@@ -1,0 +1,10 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+
+{% block products %}
+    <div class="row text-center">
+        {% for prod in products %}
+            {% include 'catalog/includes/inc_card_about.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}

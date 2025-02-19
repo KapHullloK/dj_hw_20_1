@@ -1,0 +1,21 @@
+{% load my_tags %}
+
+
+<div class="col-4">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{ prod.name }}</h4>
+        </div>
+        <div class="card-body">
+            <img src="{% mediapath2 prod.image %}" class="w-50 card-img-top"/>
+            <h1 class="card-title pricing-card-title">{{ prod.price }} р</h1>
+            <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                <li>{{ prod.description }}</li>
+            </ul>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-lg btn-outline-primary">Купить</button>
+                <a href="{% url 'catalog:about_prod' object.pk %}" class="btn btn-lg btn-outline-primary">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</div>
