@@ -1,0 +1,30 @@
+{% extends 'catalog/base.html' %}
+
+
+{% block products %}
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }} ({{ post.slug }})</h2>
+                    {% if post.img %}
+                        <img src="{{ post.img.url }}" class="card-img-top"/>
+                    {% else %}
+                        <p>Изображение отсутствует</p>
+                    {% endif %}
+                    <p class="card-text">{{ post.content }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <a href="{% url 'blog:blog-update' post.pk %}"
+                               class="btn btn-warning btn-sm">Обновить</a>
+                            <p>Просмотры: {{ post.views }}</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Опубликовано: {{ post.created_at }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

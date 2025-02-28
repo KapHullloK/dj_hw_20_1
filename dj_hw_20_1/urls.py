@@ -23,4 +23,5 @@ from dj_hw_20_1.settings import MEDIA_URL, MEDIA_ROOT
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('catalog.urls', namespace='catalog')),
+    path('blog/', include('blog.urls', namespace='blog')),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

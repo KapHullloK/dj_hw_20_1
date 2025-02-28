@@ -1,7 +1,5 @@
 from django.db import models
 
-from dj_hw_20_1.settings import MEDIA_ROOT
-
 NULLABLE = {"blank": True,
             "null": True}
 
