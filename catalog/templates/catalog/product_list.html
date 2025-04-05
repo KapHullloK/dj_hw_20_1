@@ -3,6 +3,10 @@
 
 {% block products %}
     <div class="row text-center">
+        <div class="mb-4 text-end">
+            <a href="{% url 'catalog:create_prod' %}" class="btn btn-success">Создать товар</a>
+            <a href="{% url 'catalog:create_version' %}" class="btn btn-success">Создать версию</a>
+        </div>
         {% for prod in products %}
             {% include 'catalog/includes/inc_card_menu.html' with object=prod %}
         {% endfor %}

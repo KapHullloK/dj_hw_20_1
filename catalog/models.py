@@ -24,3 +24,10 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.last_modified_date}"
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, verbose_name="product", on_delete=models.CASCADE)
+    number = models.IntegerField(verbose_name="number")
+    name = models.CharField(max_length=100, verbose_name="name")
+    active = models.BooleanField(default=True, verbose_name="active")

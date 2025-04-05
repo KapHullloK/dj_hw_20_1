@@ -1,7 +1,7 @@
 {% load my_tags %}
 
 
-<div class="col-4">
+<div class="col-6">
     <div class="card mb-4 box-shadow">
         <div class="card-header">
             <h4 class="my-0 font-weight-normal">{{ prod.name }}</h4>
@@ -12,9 +12,12 @@
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                 <li>{{ prod.description }}</li>
             </ul>
+            <h3 class="card-title pricing-card-title">{{ prod.version.name }}</h3>
             <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-lg btn-outline-primary">Купить</button>
-                <a href="{% url 'catalog:about_prod' object.pk %}" class="btn btn-lg btn-outline-primary">Подробнее</a>
+                <a href="{% url 'catalog:about_prod' prod.pk %}" class="btn btn-lg btn-outline-primary">Подробнее</a>
+                <a href="{% url 'catalog:update_prod' prod.pk %}" class="btn btn-info">Обновить товар</a>
+                <a href="{% url 'catalog:update_version' prod.version.pk %}" class="btn btn-info">Обновить версию</a>
             </div>
         </div>
     </div>
