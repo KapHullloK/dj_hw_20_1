@@ -38,6 +38,12 @@ class ProductForm(StyleForm, forms.ModelForm):
         return name
 
 
+class ProductModeratorForm(StyleForm, forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['is_published', 'description', 'category']
+
+
 class VersionForm(StyleForm, forms.ModelForm):
     class Meta:
         model = Version

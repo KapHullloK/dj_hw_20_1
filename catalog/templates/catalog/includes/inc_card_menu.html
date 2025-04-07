@@ -16,8 +16,12 @@
             <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-lg btn-outline-primary">Купить</button>
                 <a href="{% url 'catalog:about_prod' prod.pk %}" class="btn btn-lg btn-outline-primary">Подробнее</a>
-                <a href="{% url 'catalog:update_prod' prod.pk %}" class="btn btn-info">Обновить товар</a>
-                <a href="{% url 'catalog:update_version' prod.version.pk %}" class="btn btn-info">Обновить версию</a>
+                {% if perms.catalog.change_product_is_published and perms.catalog.change_product_description and perms.catalog.change_product_category or user == prod.owner %}
+                    <a href="{% url 'catalog:update_prod' prod.pk %}" class="btn btn-info">Обновить товар</a>
+                    <a href="{% url 'catalog:update_version' prod.version.pk %}" class="btn btn-info">
+                        Обновить версию
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
