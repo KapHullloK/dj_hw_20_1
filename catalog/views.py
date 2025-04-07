@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Exists, OuterRef
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView
@@ -6,9 +7,10 @@ from catalog.forms import ProductForm, VersionForm
 from catalog.models import Product, Version
 
 
-class ProductListView(ListView):
+class ProductListView(LoginRequiredMixin, ListView):
     model = Product
     context_object_name = 'products'
+    login_url = reverse_lazy('users:login')
 
     def get_queryset(self):
         active_versions = Version.objects.filter(product=OuterRef('pk'), active=True)
@@ -39,6 +41,10 @@ class ProductCreateView(CreateView):
     form_class = ProductForm
     context_object_name = 'prod'
     success_url = reverse_lazy('catalog:home_menu')
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
 
 
 class ProductUpdateView(UpdateView):
