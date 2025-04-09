@@ -1,14 +1,17 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.db.models import Exists, OuterRef
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView
 
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
 from catalog.models import Product, Version
 
 
-class ProductListView(ListView):
+class ProductListView(LoginRequiredMixin, ListView):
     model = Product
     context_object_name = 'products'
+    login_url = reverse_lazy('users:login')
 
     def get_queryset(self):
         active_versions = Version.objects.filter(product=OuterRef('pk'), active=True)
@@ -40,12 +43,27 @@ class ProductCreateView(CreateView):
     context_object_name = 'prod'
     success_url = reverse_lazy('catalog:home_menu')
 
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
 
-class ProductUpdateView(UpdateView):
+
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForm
     context_object_name = 'prod'
     success_url = reverse_lazy('catalog:home_menu')
+    login_url = reverse_lazy('users:login')
+
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.owner:
+            return ProductForm
+        if (user.has_perm("catalog.change_product_is_published") and
+                user.has_perm("catalog.change_product_description") and
+                user.has_perm("catalog.change_product_category")):
+            return ProductModeratorForm
+        return PermissionDenied
 
 
 class ContactTemplateView(TemplateView):

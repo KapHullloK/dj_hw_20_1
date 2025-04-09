@@ -1,0 +1,67 @@
+[
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "asds",
+      "slug": null,
+      "content": "aasdasdasd aaaaa a. a a a\r\na\r\naa\r\na\r\na\r\na",
+      "img": "images/T5KO0J8G5GE.jpg",
+      "created_at": "2025-02-26T13:27:50.359Z",
+      "is_published": false,
+      "views": 7
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "df. ASAB asd",
+      "slug": null,
+      "content": "fshgdabjklm sdf kjsdj sadfkjf askjdfasdfkafiusdiuf dsifiusadf asdklfjad sklfbukads fbhiuasdf iuasdf",
+      "img": "images/scale_1200.jpeg",
+      "created_at": "2025-02-26T16:02:10.306Z",
+      "is_published": false,
+      "views": 25
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 5,
+    "fields": {
+      "title": "asd",
+      "slug": null,
+      "content": "dfsad dasf asdf s sdf sadfsa dfsd s",
+      "img": "",
+      "created_at": "2025-02-28T07:20:04.738Z",
+      "is_published": false,
+      "views": 0
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 6,
+    "fields": {
+      "title": "adsfs",
+      "slug": "adsfs",
+      "content": "ad asd ad adsfadsf asd",
+      "img": "",
+      "created_at": "2025-02-28T07:27:22.213Z",
+      "is_published": true,
+      "views": 9
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 7,
+    "fields": {
+      "title": "dad fs",
+      "slug": "dad-fs",
+      "content": "sdf asdf asdfsd fasdf",
+      "img": "",
+      "created_at": "2025-02-28T07:37:13.247Z",
+      "is_published": true,
+      "views": 4
+    }
+  }
+]

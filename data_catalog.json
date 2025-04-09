@@ -1,0 +1,128 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "var1",
+      "description": "s sd",
+      "created_at": "2025-01-28T12:51:22.248Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "var2",
+      "description": "gf a",
+      "created_at": "2025-01-28T12:51:22.249Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "viks",
+      "description": "cvx",
+      "image": "",
+      "category": 4,
+      "price": 150.5,
+      "creation_date": "2025-01-28T12:51:22.251Z",
+      "last_modified_date": "2025-01-28T12:51:22.251Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "gidsAs",
+      "description": "asd a",
+      "image": "images/T5KO0J8G5GE_uKXwClN.jpg",
+      "category": 5,
+      "price": 80.9,
+      "creation_date": "2025-01-28T12:51:22.252Z",
+      "last_modified_date": "2025-04-05T07:22:31.293Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "dops",
+      "description": "gasd as",
+      "image": "images/предпосылка-радуги-абстрактная-фрактали-красочныи-яркие-124384328.jpeg",
+      "category": 4,
+      "price": 231.0,
+      "creation_date": "2025-02-18T10:45:10.818Z",
+      "last_modified_date": "2025-02-19T07:53:44.562Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "фы",
+      "description": "фыв",
+      "image": "",
+      "category": 4,
+      "price": 521.0,
+      "creation_date": "2025-04-04T20:28:50.398Z",
+      "last_modified_date": "2025-04-04T20:28:50.398Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "фы",
+      "description": "фыв",
+      "image": "",
+      "category": 4,
+      "price": 521.0,
+      "creation_date": "2025-04-04T20:31:28.875Z",
+      "last_modified_date": "2025-04-04T20:31:28.875Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "agre",
+      "description": "asd",
+      "image": "",
+      "category": 5,
+      "price": 123.0,
+      "creation_date": "2025-04-04T20:32:13.885Z",
+      "last_modified_date": "2025-04-04T20:32:13.885Z"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 5,
+      "number": 4343,
+      "name": "aacs",
+      "active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 4,
+      "number": 231,
+      "name": "bu",
+      "active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 6,
+      "number": 2331,
+      "name": "Jumo",
+      "active": true
+    }
+  }
+]

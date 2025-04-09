@@ -19,7 +19,7 @@ class StyleForm:
 class ProductForm(StyleForm, forms.ModelForm):
     class Meta:
         model = Product
-        exclude = ['creation_date', 'last_modified_date']
+        exclude = ['creation_date', 'last_modified_date', 'owner']
 
     def clean_name(self):
         name = self.cleaned_data.get('name')
@@ -36,6 +36,12 @@ class ProductForm(StyleForm, forms.ModelForm):
             raise forms.ValidationError("<name> содержит запрещенные слова")
 
         return name
+
+
+class ProductModeratorForm(StyleForm, forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['is_published', 'description', 'category']
 
 
 class VersionForm(StyleForm, forms.ModelForm):
