@@ -25,10 +25,10 @@ load_dotenv(dotenv_path=dot_env)
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h1xgzi*(jh8f%@phx+0_vb(&db5bx67%p^^-p-vsu%8==ujt*e'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG') == '1'
 
 ALLOWED_HOSTS = []
 
@@ -86,9 +86,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DATABASES_NAME'),
         "USER": os.getenv('DATABASES_USER'),
-        "PASSWORD": '',
-        "HOST": "localhost",
-        "PORT": "5432",
+        "PASSWORD": os.getenv('DATABASES_PASSWORD'),
+        "HOST": os.getenv('DATABASES_HOST'),
+        "PORT": os.getenv('DATABASES_PORT'),
     }
 }
 
